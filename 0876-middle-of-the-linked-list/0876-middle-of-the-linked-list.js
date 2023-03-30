@@ -16,11 +16,11 @@ var middleNode = function(head) {
     // head = [1,2,3,4,5,6]
   const arr = [];
   let length = 0;
-  let list = head;  // list = [1,2,3,4,5,6]
-  while(list) {
+ // list = [1,2,3,4,5,6]
+  while(head) {
     length++;
-    arr.push(list)
-    list = list.next;
+    arr.push(head)
+    head = head.next;
   }
   // arr = [ [1,2,3,4,5,6], [2,3,4,5,6], [3,4,5,6], [4,5,6], [5,6], [6] ]
   return arr[Math.floor(length/2)] // [4,5,6]
