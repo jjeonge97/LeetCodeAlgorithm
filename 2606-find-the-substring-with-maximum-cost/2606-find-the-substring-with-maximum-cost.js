@@ -20,30 +20,22 @@ var maximumCostSubstring = function(s, chars, vals) {
         }
     }
     
-    // 'talaqlt','tqla',[4,3,3,2]
-    // [4,-2,3,-2,3,3,4]
+//     let result = -Infinity;
+//     let max = 0;
+
+//     for(let i = 0; i < store.length; i++){
+//     	max = Math.max(store[i], max + store[i]);
+//         result = Math.max(max, result);
+//     }
     
-    let result = -Infinity;
-    let max = 0;
+//      return result > 0 ? result : 0
     
-    for(let i = 0; i < store.length; i++){
-    	max = Math.max(store[i], max + store[i]);
-        result = Math.max(max, result);
+    for(let i = 1; i < store.length; i++) {
+        store[i] = Math.max(store[i], store[i] + store[i - 1])
     }
     
-    return result > 0 ? result : 0
+    return Math.max(...store) > 0 ? Math.max(...store) : 0
 
-    // let result = [];
-    // let sum = 0;
-    // for(let i = 0; i < store.length; i++) {
-    //     if(store[i] > 0) {
-    //         sum+= store[i]
-    //     } else {
-    //         result.push(sum)
-    //         sum = 0; 
-    //     }
-    // }
-    // result.push(sum)
-    // return Math.max(...result) 
+
 
 };
