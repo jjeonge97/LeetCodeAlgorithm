@@ -10,14 +10,17 @@ var searchInsert = function(nums, target) {
     }
     
     // nums.push(target) 해서 오름차순 정렬 후 target index return
+    nums.push(target)
+    nums.sort((a,b) => a - b)
+    return nums.indexOf(target)
     
-    for(let i = 0; i < nums.length; i++) {
-        if(nums[i] >= target) {
-            return i;
-        }
-    }
+//     for(let i = 0; i < nums.length; i++) {
+//         if(nums[i] >= target) {
+//             return i;
+//         }
+//     }
 
-    return nums.length;
+//     return nums.length;
     
 };
 
