@@ -4,25 +4,23 @@
  * @return {number}
  */
 var searchInsert = function(nums, target) {
+    let left = 0; 
+    let right = nums.length - 1;
     
-    if(nums.includes(target)) {
-        return nums.indexOf(target)
+    while(left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if(nums[mid] === target) {
+            return mid;
+        } else if(nums[mid] > target) {
+            right = mid - 1;
+        } else if(nums[mid] < target) {
+            left = mid + 1
+        }
     }
     
-    // nums.push(target) 해서 오름차순 정렬 후 target index return
-    nums.push(target)
-    nums.sort((a,b) => a - b)
-    return nums.indexOf(target)
-    
-//     for(let i = 0; i < nums.length; i++) {
-//         if(nums[i] >= target) {
-//             return i;
-//         }
-//     }
-
-//     return nums.length;
+    return left
     
 };
-
-// [1,3,5,6] 7 - 4
-// [1,3,5,6] 0 - 0
+// target 을 찾으면 index 리턴 
+// 못찾으면 target 이 들어갈 index 리턴 
