@@ -16,10 +16,7 @@ var minDepth = function(root) {
     
     const nodeDepth = (root, nodeDep = 1) => {
         
-        if(!root.right && !root.left) {
-            depth = Math.min(depth, nodeDep);
-            return;
-        }
+        if(!root.right && !root.left) depth = Math.min(depth, nodeDep)
         
         if(root.left) nodeDepth(root.left, nodeDep + 1)
         
