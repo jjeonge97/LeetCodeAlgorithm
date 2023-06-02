@@ -14,7 +14,18 @@
 var hasPathSum = function(root, targetSum) {
     if(!root) return false;
     
-    if(!root.right && !root.left) return root.val === targetSum
+//     if(!root.right && !root.left) return root.val === targetSum
+    let output = false
+//     return hasPathSum(root.right, targetSum - root.val) || hasPathSum(root.left, targetSum - root.val)
+    const getSum = (root, sum = 0) => {
+        if(!root.right && !root.left) {
+            if(targetSum === sum + root.val) return output = true
+        }
+        
+        if(root.left) getSum(root.left, sum + root.val)
+        if(root.right) getSum(root.right, sum + root.val)
+    }
     
-    return hasPathSum(root.right, targetSum - root.val) || hasPathSum(root.left, targetSum - root.val)
+    getSum(root)
+    return output
 };
