@@ -7,7 +7,7 @@ var checkStraightLine = function(coordinates) {
     
     let [x0,y0] = coordinates[0];
     let [x1, y1] = coordinates[1];
-    let dis = (y1 - y0) / (x1 - x0); // 기울기 
+   // let dis = (y1 - y0) / (x1 - x0); // 기울기 
     
     for(let i = 2; i < coordinates.length; i++) {
         const [x,y] = coordinates[i];
