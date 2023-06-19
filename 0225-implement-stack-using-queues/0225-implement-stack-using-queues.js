@@ -8,10 +8,10 @@ var MyStack = function() {
  * @return {void}
  */
 MyStack.prototype.push = function(x) {
-    this.que.push(x)
-     for(let i = 1; i < this.que.length; i++){
-      this.que.push(this.que.shift())
-    }
+    this.que.unshift(x)
+    //  for(let i = 1; i < this.que.length; i++){
+    //   this.que.push(this.que.shift())
+    // }
 };
 
 /**
